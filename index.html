@@ -99,9 +99,64 @@
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
     // Start your code here
     // You may move this JS to another file if you wish
+    let buttonList = document.querySelectorAll('button');
+
+    buttonList[1].addEventListener('click', () => {
+      console.log('Console Log Demo');
+    });
+    buttonList[2].addEventListener('click', () => {
+      console.error('Console Error Demo');
+    })
+    buttonList[3].addEventListener('click', () => {
+      console.count('Count Button');
+    });
+    buttonList[4].addEventListener('click', () => {
+      console.warn('Console Warn Button');
+    });
+    let number = 2;
+    let errorMsg = 'The number does not equal 3';
+    buttonList[5].addEventListener('click', () => {
+      console.assert(number === 3, '%o', { number, errorMsg });
+    });
+    buttonList[6].addEventListener('click', () => {
+      console.clear();
+    });
+    buttonList[7].addEventListener('click', () => {
+      console.dir(buttonList[7]);
+    });
+    buttonList[8].addEventListener('click', () => {
+      console.dirxml(buttonList[8]);
+    });
+    buttonList[9].addEventListener('click', () => {
+      console.group();
+    });
+    buttonList[10].addEventListener('click', () => {
+      console.groupEnd();
+    });
+
+    function Course(name, num) {
+      this.name = name;
+      this.num = num;
+    }
+
+    const softwareEng = new Course("Software Engineering", 110);
+    const programmingLang = new Course("Programming Language", 130);
+    const advancedSoft = new Course("Advanced Software", 112);
+
+    buttonList[11].addEventListener('click', () => {
+      console.table([softwareEng, programmingLang, advancedSoft]);
+    });
+    buttonList[12].addEventListener('click', () => {
+      console.time('Timer Button');
+    });
+    buttonList[13].addEventListener('click', () => {
+      console.timeEnd('Timer Button');
+    });
+    buttonList[14].addEventListener('click', () => {
+      console.trace();
+    });
   </script>
 </body>
 
